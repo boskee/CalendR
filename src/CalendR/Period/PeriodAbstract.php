@@ -105,6 +105,21 @@ abstract class PeriodAbstract implements PeriodInterface
     }
 
     /**
+     * Returns true if the period intersects the other period
+     * given as argument
+     *
+     * @param PeriodInterface $period
+     *
+     * @return bool
+     */
+    public function intersects(PeriodInterface $period)
+    {
+        return
+            $this->begin->format('U') <= $period->getEnd()->format('U') &&
+            $period->getBegin()->format('U') <= $this->end->format('U');
+    }
+
+    /**
      * Returns if $event is during this period.
      * Non strict. Must return true if :
      *  * Event is during period

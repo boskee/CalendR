@@ -42,6 +42,22 @@ class Range extends PeriodAbstract
     }
 
     /**
+     * @param \DateTime $begin
+     */
+    public function setBegin(\DateTime $begin)
+    {
+        $this->begin = clone $begin;
+    }
+
+    /**
+     * @param \DateTime $end
+     */
+    public function setEnd(\DateTime $end)
+    {
+        $this->end   = clone $end;
+    }
+
+    /**
      * @return Day
      */
     public function getNext()

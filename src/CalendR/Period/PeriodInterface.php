@@ -79,8 +79,20 @@ interface PeriodInterface
      *
      * @param PeriodInterface $period
      * @param bool            $strict
+     *
+     * @return bool
      */
     public function includes(PeriodInterface $period, $strict = true);
+
+    /**
+     * Returns true if the period intersects the other period
+     * given as argument
+     *
+     * @param PeriodInterface $period
+     *
+     * @return bool
+     */
+    public function intersects(PeriodInterface $period);
 
     /**
      * Returns if $event is during this period.
